@@ -2,7 +2,6 @@
 namespace Dao;
 
 use \Core\ Model;
-
 use \Models\Usuario;
 
 /**
@@ -13,18 +12,35 @@ use \Models\Usuario;
 class UsuarioDAO extends Model{
 	
 	function __construct(){
-		# code...
+		$db = Model::conexao();
 	}
 
 	public function insert(Usuario $usuario){
+		if (count($fieldes) > 0) {
+			if($this->existEmail($email) == false) {
+				$db = "INSERT INTO usuario (email, senha) VALUES (:email, :senha)";
+				$db = $this->db->prepare($db);
+				$db->bindValue(':email', $usuário->getEmail());
+				$db->bindValue(':email', $usuário->getSenha());
+				$db->execute();
+			}
 
+		}
 	}
+	
 
-	public function login(Usuario $usuario){
+	private  function existEmail(){
+		$db = "SELECT * FROM usuario WHERE email = :email";
+		$db = $this->db->prepare($db);
+		$db->bindValue(':email', $usuario->getEmail());
+		$db->execute();
 
-	}
-
-	private  function existName(){
-
+		if($db->rowCount() > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
+
+
