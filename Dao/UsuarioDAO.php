@@ -10,32 +10,35 @@ use \Models\Usuario;
  * de banco de dados relaciondas ao usuário
  */
 class UsuarioDAO extends Model{
-	
+	private $conn;
 	function __construct(){
-		$db = Model::conexao();
+		$this->conn = Model::conexao();
 	}
 
 	public function insert(Usuario $usuario){
-		if (count($fieldes) > 0) {
-			if($this->existEmail($email) == false) {
-				$db = "INSERT INTO usuario (email, senha) VALUES (:email, :senha)";
-				$db = $this->db->prepare($db);
-				$db->bindValue(':email', $usuário->getEmail());
-				$db->bindValue(':email', $usuário->getSenha());
-				$db->execute();
-			}
-
+		$usuario->getEmail();
+		if($this->existEmail($usuario) == false) {
+			$sql = "INSERT INTO usuario (nome,email, senha,confirmaSenha) VALUES (:nome,:email, :senha,:confirmaSenha)";
+			$sql = $this->conn->prepare($sql);
+			$sql->bindValue(':nome', $usuario->getNome());
+			$sql->bindValue(':email', $usuario->getEmail());
+			$sql->bindValue(':senha', $usuario->getSenha());
+			$sql->bindValue(':confirmaSenha', $usuario->getConfirmaSenha());
+			$sql->execute();
+			return true;
+		}else{
+			return false;
 		}
 	}
 	
 
-	private  function existEmail(){
-		$db = "SELECT * FROM usuario WHERE email = :email";
-		$db = $this->db->prepare($db);
-		$db->bindValue(':email', $usuario->getEmail());
-		$db->execute();
+	private  function existEmail(Usuario $usuario){
+		$sql = "SELECT email FROM usuario WHERE email = :email";
+		$sql = $this->conn->prepare($sql);
+		$sql->bindValue(':email', $usuario->getEmail());
+		$sql->execute();
 
-		if($db->rowCount() > 0) {
+		if($sql->rowCount() > 0) {
 			return true;
 		} else {
 			return false;

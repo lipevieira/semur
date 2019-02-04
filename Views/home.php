@@ -11,7 +11,7 @@
 <body class="">
   <div class="borda"></div>
 
-<!-- Formulario de Login -->
+  <!-- Formulario de Login -->
   <form class="form-signin">
     <h1 class="h3 mb-3 font-weight-normal"> Faça seu login</h1>
     <div class="form-group">
@@ -25,40 +25,50 @@
     <div class="checkbox mb-3">
      <label>
       <input type="checkbox" value="remember-me"> Remember me</label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <a href="javascript:;" onclick="abrirModal()" >Por favor, cadastre-se</a>
-</form>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <a href="javascript:;" onclick="abrirModal()" >Por favor, cadastre-se</a>
+  </form>
 
-<!-- Incio da Modal -->
-<div class="modal fade"   role="dialog">
-  <div class="modal-dialog" >
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title text-center" id="myModal">Cadastro de Usuário</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Meu formulario -->
-        <form method="POST" id="formCadUsuario">
-          <div class="form-group">
-            <label for="txtCadEmail">Email address</label>
-            <input type="email" class="form-control" id="txtCadEmail" aria-describedby="emailHelp" placeholder="Enter email" name="txtCadEmail">
-          </div>
-          <div class="form-group">
-            <label for="txtCadSenha">Password</label>
-            <input type="password" class="form-control" id="txtCadSenha" placeholder="Password" name="txtCadSenha">
-          </div>
-          <div class="modal-footer">
-            <button type="submit"class="btn btn-success"  id="enviar" onclick="addUsuario()">Salvar</button>
-          </div>
-        </form>
+  <!-- Incio da Modal -->
+  <div class="modal fade"   role="dialog">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center" id="myModal">Cadastro de Usuário</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Meu formulario -->
+          <form method="POST" id="formCadUsuario">
+            <div class="form-group">
+              <label for="txtCadNome">Nome</label>
+              <input type="text" class="form-control" id="txtCadNome" aria-describedby="emailHelp" placeholder="Informe seu nome" name="txtCadNome">
+            </div> 
+
+            <div class="form-group">
+              <label for="txtCadEmail">Email</label>
+              <input type="email" class="form-control" id="txtCadEmail" aria-describedby="emailHelp" placeholder="informe seu  email" name="txtCadEmail">
+            </div>
+            <div class="form-group">
+              <label for="txtCadSenha">Senha</label>
+              <input type="password" class="form-control" id="txtCadSenha" placeholder="Informe sua senha" name="txtCadSenha">
+            </div>
+
+            <div class="form-group">
+              <label for="txtCadConfirmaSenha">Confirma Senha</label>
+              <input type="password" class="form-control" id="txtCadConfirmaSenha" placeholder="Confirma sua Senha" name="txtCadConfirmaSenha">
+            </div>
+            <div class="modal-footer">
+              <button type="submit"class="btn btn-success"  id="enviar" onclick="addUsuario()">Salvar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 

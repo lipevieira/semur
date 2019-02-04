@@ -10,24 +10,35 @@ namespace Models;
 class Usuario
 {
     private $id;
+    private $nome;
     private $email;
     private $senha;
+    private $confirmaSenha;
 
     public function __construct()
     {
-
+        
     }
     public function getId()
     {
         return $this->id;
     }
 
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    }
     public function setId($id)
     {
         $this->id = $id;
 
         return $this;
-	}
+    }
 
     public function getEmail()
     {
@@ -37,7 +48,7 @@ class Usuario
     {
         $this->Email = $Email;
         return $this;
-	}
+    }
     public function getSenha()
     {
         return $this->senha;
@@ -47,5 +58,15 @@ class Usuario
     {
         $this->senha = $senha;
         return $this;
+    }
+
+    public function getConfirmaSenha()
+    {
+        return $this->confirmaSenha;
+    }
+
+    public function setConfirmaSenha($confirmaSenha) 
+    {
+        $this->confirmaSenha = $confirmaSenha;
     }
 }
