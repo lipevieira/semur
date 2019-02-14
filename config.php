@@ -10,7 +10,7 @@ if (ENVIRONMENT == "development") {
     $db['dbname'] = 'nti';
     $db['host'] = '127.0.0.1';
     $db['dbuser'] = 'root';
-    $db['dbpass'] = 'root';
+    $db['dbpass'] = '';
 } else {
     define("BASE_URL", "htpp://meusite.com.br/");
 

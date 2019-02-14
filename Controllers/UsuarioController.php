@@ -10,40 +10,56 @@ class UsuarioController extends Controller
 {
     public function index()
     {
-        $dados = array(
-            '' => ' ',
-        );
+        $dados = array('' => ' ',);
     }
 
     public function inserir()
-    {       
+    {
+        $res = array();
         $usuario = new Usuario();
         $usuarioDAO = new UsuarioDAO();
-
         //  Recebendo os dados da requisão.
         $nome = addslashes($_POST['txtCadNome']);
         $email = addslashes($_POST['txtCadEmail']);
         $senha = addslashes($_POST['txtCadSenha']);
-        $confirmaSenha = addslashes($_POST['txtCadConfirmaSenha']);
-        if (isset($_POST['txtCadEmail']) && !empty($_POST['txtCadEmail']) && isset($_POST['txtCadSenha']) && !empty($_POST['txtCadSenha'])){
-            echo "Cadastro feito com sucesso!";
+        if (isset($_POST['txtCadEmail']) && !empty($_POST['txtCadEmail'])) {
             $usuario->setNome($nome);
             $usuario->setEmail($email);
             $usuario->setSenha(md5($senha));
-            $usuario->setConfirmaSenha(md5($confirmaSenha));
-// TO-DE Fazer: verificação de inserssãio de usuário
-            try{
-                $verificador = $usuarioDAO->insert($usuario);
-                if ($verificador == true) {
-                    echo "Cadastro feito com sucesso!";
-                    return true;
-                }else{
-                  echo "Error!";
-              }
-          }catch(Expetion $e){
-            echo "Erro de banco de dados ".$e;
-            return false;
+            /******************************************************** */
+            try {
+                $fericador = $usuarioDAO->insertDAO($usuario);
+                if ($fericador) {
+                    $res['resposta'] = "Cadastro feito com sucesso!";
+                } else {
+                    $res['resposta'] = "E-mail ja cadastrado!";
+                }
+                echo json_encode($res);
+            } catch (Exception  $e) {
+                $e->getMessage();
+            }
         }
     }
- }
+
+    public function login()
+    {
+        $res = array();
+        // Atributos para conexao ao banco de dados
+        $usuario = new Usuario();
+        $usuarioDAO = new UsuarioDAO();
+        /* **************************************/
+        $email = addslashes($_POST['txtLoginEmail']);
+        $senha = addslashes($_POST['txtLoginSenha']);
+        /* **************************************/
+        $usuario->setEmail($email);
+        $usuario->setSenha(md5($senha));
+        /* Vericando se existe um usuário no DB*/
+        $verificador =  $usuarioDAO->loginDAO($usuario);
+        if ($verificador) {
+            $res['resposta'] = "Login feito com sucesso";
+        } else {
+            $res['resposta'] = "Usuário ou senha Incorretos";
+        }
+        echo json_encode($res);
+    }
 }

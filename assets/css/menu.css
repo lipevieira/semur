@@ -1,0 +1,37 @@
+.row {
+    height: 1000px;
+}
+
+ul {
+    margin-top: 120px;
+    list-style-type: none;
+}
+
+li {
+    font-size: 20px;
+}
+
+.col-sm-2 {
+    margin-top: 0px;
+    background-color: #373f42;
+}
+
+.col-sm-10 {
+    margin-top: 0px;
+}
+
+a:link {
+    color: #FFF;
+}
+
+.table {
+    margin-top: 10px;
+}
+
+#btnRelatorio {
+    margin-left: 95%;
+}
+
+#btnInserirEquipamento {
+    margin-top: 25px;
+}

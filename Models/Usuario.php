@@ -15,58 +15,46 @@ class Usuario
     private $senha;
     private $confirmaSenha;
 
-    public function __construct()
-    {
+    public function __construct(){
         
     }
-    public function getId()
-    {
+    public function getId(){
         return $this->id;
     }
 
-    public function getNome()
-    {
+    public function getNome(){
         return $this->nome;
     }
 
-    public function setNome($nome)
-    {
+    public function setNome($nome){
         $this->nome = $nome;
     }
-    public function setId($id)
-    {
+    public function setId($id){
         $this->id = $id;
-
         return $this;
     }
 
-    public function getEmail()
-    {
+    public function getEmail(){
         return $this->Email;
     } 
-    public function setEmail($Email)
-    {
+    public function setEmail($Email){
         $this->Email = $Email;
         return $this;
     }
-    public function getSenha()
-    {
+    public function getSenha(){
         return $this->senha;
     }
 
-    public function setSenha($senha)
-    {
+    public function setSenha($senha){
         $this->senha = $senha;
         return $this;
     }
 
-    public function getConfirmaSenha()
-    {
+    public function getConfirmaSenha(){
         return $this->confirmaSenha;
     }
 
-    public function setConfirmaSenha($confirmaSenha) 
-    {
+    public function setConfirmaSenha($confirmaSenha) {
         $this->confirmaSenha = $confirmaSenha;
     }
 }

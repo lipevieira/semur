@@ -10,7 +10,7 @@ namespace Core;
   	private $db_host = "127.0.0.1";
   	private $db_nome = "nti";
   	private $db_usuario = "root";
-  	private $db_senha = "root";
+  	private $db_senha = "";
   	private $db_driver = "mysql";
   	protected static $db;
   	private function __construct(){
