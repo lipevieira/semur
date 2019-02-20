@@ -3,29 +3,41 @@
 }
 
 ul {
-    margin-top: 120px;
+    margin-top: 250px;
     list-style-type: none;
 }
 
 li {
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: 11px;
 }
 
-.col-sm-2 {
+#menu {
+    margin-left: -70px;
+    
+}
+
+.col-sm-1 {
     margin-top: 0px;
     background-color: #373f42;
 }
 
-.col-sm-10 {
+.col-sm-11 {
     margin-top: 0px;
+    font-size: 12px;
 }
 
-a:link {
+#menu1, #menu2, #menu3, #menu4, #menu5 {
+    text-decoration: none;
     color: #FFF;
 }
 
-.table {
+.table, #btl_acoes {
     margin-top: 10px;
+    text-align: right;
+}
+.table, col_acoes{
+    text-align: center;
 }
 
 #btnRelatorio {

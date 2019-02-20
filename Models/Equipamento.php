@@ -3,7 +3,7 @@ namespace Models;
 
 class Equipamento{
     private $id;
-    private $local;
+    private $localidade;
     private $setor;
     private $usuario;
     private $equipamento;
@@ -12,7 +12,7 @@ class Equipamento{
     private $tombo;
     private $fornecedor;
     private $marca;
-    private $enderecoIp;
+    private $computador;
     private $obervacao;
 
 /****************gets e sets****************/
@@ -25,15 +25,7 @@ class Equipamento{
         $this->id = $id;
         return $this;
     }
-    public function getLocal()
-    {
-        return $this->local;
-    }
-    public function setLocal($local)
-    {
-        $this->local = $local;
-        return $this;
-    }
+   
     public function getSetor()
     {
         return $this->setor;
@@ -107,15 +99,7 @@ class Equipamento{
         $this->marca = $marca;
         return $this;
     }
-    public function getEnderecoIp()
-    {
-        return $this->enderecoIp;
-    }
-    public function setEnderecoIp($enderecoIp)
-    {
-        $this->enderecoIp = $enderecoIp;
-        return $this;
-    }
+   
     public function getObervacao()
     {
         return $this->obervacao;
@@ -123,6 +107,36 @@ class Equipamento{
     public function setObervacao($obervacao)
     {
         $this->obervacao = $obervacao;
+        return $this;
+    }
+    public function getLocalidade()
+    {
+        return $this->localidade;
+    }
+    public function setLocalidade($localidade)
+    {
+        $this->localidade = $localidade;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of computador
+     */ 
+    public function getComputador()
+    {
+        return $this->computador;
+    }
+
+    /**
+     * Set the value of computador
+     *
+     * @return  self
+     */ 
+    public function setComputador($computador)
+    {
+        $this->computador = $computador;
+
         return $this;
     }
 }

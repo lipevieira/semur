@@ -13,21 +13,28 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-1" >
                 <!-- *******************MENU************************ -->
-                <ul>
-                    <li><a href="#"> <img src="<?php echo BASE_URL; ?>assets/images/perfil.png" alt=""> Perfil</a></li>
+                <menu id="menu">
+                    <ul>
+                        <li><a href="#" id="menu1"> <img src="<?php echo BASE_URL; ?>assets/images/perfil.png" alt="">
+                                Perfil</a></li>
 
-                    <li><a href="#"> <img src="<?php echo BASE_URL; ?>assets/images/equipamento.png"alt=""> Equipamentos</a></li>
+                        <li><a href="#" id="menu2"> <img src="<?php echo BASE_URL; ?>assets/images/equipamento.png"
+                                    alt=""> Equipamentos</a></li>
 
-                    <li><a href="#"> <img src="<?php echo BASE_URL; ?>assets/images/emprestimo.png" alt=""> Emprestimo</a></li>
+                        <li><a href="#" id="menu3"> <img src="<?php echo BASE_URL; ?>assets/images/emprestimo.png"
+                                    alt=""> Emprestimo</a></li>
 
-                    <li><a href="#"> <img src="<?php echo BASE_URL; ?>assets/images/ocs.png" alt=""> OCS</a></li>
-                    
-                    <li><a href="#"> <img src="<?php echo BASE_URL; ?>assets/images/sair.png" alt=""> Sair</a></li>
-                </ul>
+                        <li><a href="#" id="menu4"> <img src="<?php echo BASE_URL; ?>assets/images/ocs.png" alt="">
+                                OCS</a></li>
+
+                        <li><a href="#" id="menu5"> <img src="<?php echo BASE_URL; ?>assets/images/sair.png" alt="">
+                                Sair</a></li>
+                    </ul>
+                </menu>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-11">
                 <?php $this->loadViewInTemplate($viewName, $viewData);?>
             </div>
         </div>
